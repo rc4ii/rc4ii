@@ -482,7 +482,7 @@ strong {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  height: calc(50vh - 50px);
+  height: calc(60vh - 50px);
 }
 
 .hero::after {
@@ -536,7 +536,9 @@ strong {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  height: calc(50vh - 10px);
+  /* resize: both; */
+  /* overflow: scroll; */
+  /* height: calc(80vh - 50px); */
 }
 
 .speakers-thumb {
@@ -582,7 +584,7 @@ strong {
 }
 
 .speakers-image {
-  width: 100%;
+  width: 300px;
 }
 
 .speakers-text-info {
@@ -701,6 +703,11 @@ strong {
   position: relative;
 }
 
+.call-to-action-link {
+  font-weight: bold;
+  text-decoration: underline;
+  }
+
 /* .call-to-action::after {
   content: "";
   background: rgba(0, 0, 0, 0.45);
@@ -755,6 +762,7 @@ strong {
 /*---------------------------------------
   ORGANIZERS              
 -----------------------------------------*/
+
 .organizers {
   background-image: url('../images/organizers-background.jpg');
   background-repeat: no-repeat;
@@ -762,14 +770,11 @@ strong {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  height: calc(50vh - 50px);
-  
-  /* background: var(--section-bg-color); */
 }
 
 .organizer-col{
-  flex:0 0 auto;
-  width:20.0%
+  flex: 0 0 auto;
+  width: 20.0%
 }
 
 .organizers-thumb {
@@ -784,9 +789,9 @@ strong {
   background: var(--primary-color);
   width: 100%;
   padding: 15px;
-} */
+}
 
-/* .organizers-thumb:hover .organizers-title,
+.organizers-thumb:hover .organizers-title,
 .organizers-thumb:hover .organizers-text {
   color: var(--white-color);
 } */
@@ -801,7 +806,7 @@ strong {
   right: 0;
   left: 0;
   width: 200px;
-  margin: 3px;
+  margin: -50px 0px;
   padding: 10px 15px;
 }
 
@@ -818,11 +823,11 @@ strong {
 } */
 
 .organizers-image {
-  width: 100%;
+  width: 200px;
 }
 
 .organizers-text-info {
-  padding: 80px;
+  padding: 100px;
 }
 
 .organizers-title,
