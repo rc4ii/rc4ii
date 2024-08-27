@@ -511,7 +511,11 @@ strong {
   top: 50px;
 }
 
-
+.hero-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--white-color);
+  }
 
 .date-text,
 .location-text {
