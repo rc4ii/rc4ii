@@ -144,6 +144,10 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
+.notbold{
+  font-weight:normal
+}​
+
 .small-title {
   text-transform: uppercase;
 }
