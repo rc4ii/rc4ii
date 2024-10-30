@@ -19,6 +19,7 @@ https://templatemo.com/tm-575-leadership-event
   --navbar-bg-color:              #273053;
   --p-color:                      #717275;
   --highlight-icon-color:         #ff0100;
+  --info-bg-color:                #ffc125;
 
   --body-font-family:             'DM Sans', sans-serif;
 
@@ -473,6 +474,17 @@ strong {
 
 .highlight-icon:hover {
   color: var(--white-color);
+}
+
+
+/*---------------------------------------
+INFO         
+-----------------------------------------*/
+.info {
+  background: var(--info-bg-color);
+  position: relative;
+  height: 300px;
+  padding: 50px;
 }
 
 
