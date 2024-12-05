@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Presentation Slides</title>
+  <!-- Include your workshop's CSS styles -->
+  <link rel="stylesheet" href="https://rc4ii.github.io/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://rc4ii.github.io/css/template-event.css">
+  <link rel="stylesheet" href="https://rc4ii.github.io/css/bootstrap-icons.css">
+</head>
+<body>
+  <!-- Top Bar Section -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+        <i class="bi-robot brand-logo"></i>
+        <span class="brand-text">Robotic Computing for<br> Industrial Inspection</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <main class="site-main py-5">
+    <div class="container">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center">Upload Your Slides</h2>
+          <p class="text-center">Submit your presentation slides for the RC4II workshop. Supported formats: PDF, PPT, PPTX.</p>
+          
+          <form id="uploadForm" enctype="multipart/form-data" class="upload-form">
+            <div class="mb-3">
+              <label for="file" class="form-label"></label>
+              <input type="file" id="fileInput"  name="file"  class="form-control" accept=".pdf,.ppt,.pptx" required>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+          </form>
+
+          <!-- Progress Bar -->
+          <div class="progress mt-3 d-none" id="progressBarContainer">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" style="width: 100%"></div>
+          </div>
+
+          <p id="responseMessage" class="mt-3 text-center"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const fileInput = document.getElementById('fileInput');
+        const formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+
+        fetch('https://file.io/', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer OWW2F4Z.K5MAW7G-379MYEF-N5ZGFFS-VRTJZT7' // Replace with your actual API key
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('responseMessage').innerText = 'File uploaded successfully. Link: ' + data.link;
+            } else {
+                document.getElementById('responseMessage').innerText = 'File upload failed.';
+            }
+        })
+        .catch(error => {
+            document.getElementById('responseMessage').innerText = 'An error occurred during the upload.';
+        });
+    });
+    </script>
+</body>
+</html>
